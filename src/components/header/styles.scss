@@ -1,0 +1,20 @@
+.food-header {
+    background-color: #FFF8EE;
+    width: 100%;
+    &--wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+}
+
+.food-menu {
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
