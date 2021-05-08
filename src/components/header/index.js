@@ -1,6 +1,7 @@
 import React from 'react'
 import './styles.scss';
 import logoImage from './images/logo-header.png';
+import iconMoto from './images/header-moto-icon.png'
 
 const menu = [
     'home',
@@ -16,13 +17,25 @@ const Header = () => {
                 <span>
                     <img src={logoImage} />
                 </span>
-                <div className="food-menu">
+                <div className="food-header--menu">
                     <ul>
-                        {menu.map( item => <li key={item}>{item}</li>)}
+                        {menu.map( item => <li key={item}><a href="#">{item}</a></li>)}
                     </ul>
+                    <span className="food-header--moto">
+                        <img src={iconMoto} />
+                    </span>
+                </div>
+                
+
+                <div className="food-header--wrapper-content">
+                    <span className="food-header--help">
+                        <p>Need Help?</p>
+                        <strong>12345</strong>
+
+                    </span>
+                    <button className="food-header--button">login</button>
                 </div>
 
-                <button>login</button>
             </div>
         </header>
     )
