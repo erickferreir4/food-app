@@ -2,6 +2,8 @@ import React from 'react';
 import './styles.scss';
 import imgProd from './imagens/item-img.jpeg'
 
+
+
 const allItems = [
     {
         id: 1,
@@ -68,13 +70,15 @@ const Items = () => {
             <div className="food-items--wrapper">
                 <ul className="food-items--items">
                     {allItems.map( ({name, id, price, category, img}) => (
-                        <li className="food-items--item" key={id}><a href="#">
-                            <span><img src={img} title={name}/></span>
-                            <span>
-                                <h3>{name}</h3>
-                                <p>${price}</p>
-                            </span>
-                        </a></li>
+                        <li className="food-items--item" key={id}>
+                            <a href="#">
+                                <span><img src={img} title={name}/></span>
+                                <span>
+                                    <h3>{name}</h3>
+                                    <p>${price}</p>
+                                </span>
+                            </a>
+                        </li>
                     ))}
                 </ul>
             </div>

@@ -2,4 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-ReactDOM.render(<App />, document.querySelector('#root'))
+//ReactDOM.render(<App />, document.querySelector('#root'))
+
+
+//import React from 'react';
+//import ReactDOM from 'react-dom';
+//import App from './containers/App';
+
+import { BrowserRouter as Router } from 'react-router-dom';
+
+ReactDOM.render(<Router><App /></Router>, document.getElementById('root'));
