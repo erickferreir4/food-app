@@ -19,7 +19,6 @@ const item = {
 const ProductPage = () => {
 
     const {product, shelf} = React.useContext(ProductContext)
-    console.log(shelf)
 
     return(
         <div className="food-product">

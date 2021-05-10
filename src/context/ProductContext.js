@@ -1,4 +1,5 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 
 export const ProductContext = React.createContext(null);
 
@@ -7,6 +8,7 @@ export const ProductStorage = ({children}) => {
     const [product, setProduct] = React.useState(null)
     const [loading, setLoading] = React.useState(true)
     const [shelf, setShelf] = React.useState(null)
+    const location = useLocation()
 
     const search = window.location.search.replace(/\?/g, '')
 
@@ -22,7 +24,7 @@ export const ProductStorage = ({children}) => {
         setShelf(json)
 
         setLoading(false)
-    }, []) 
+    }, [location]) 
 
     if(loading) {
         return <p>loading....</p>
