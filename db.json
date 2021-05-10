@@ -1,0 +1,118 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Set Menu Special",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "price": 10.10,
+            "category": "pizza",
+            "url": "/product?Set-Menu-Special---1",
+            "img": "./imagens/item-img.jpeg"
+        },
+        {
+            "id": 2,
+            "name": "Classic Chicken Burger",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "price": 10.10,
+            "category": "salad",
+            "url": "/product?Classic-Chicken-Burger---2",
+            "img": "./imagens/item-img.jpeg"
+        },
+        {
+            "id": 3,
+            "name": "Pizza ortolana",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "price": 10.10,
+            "category": "pizza",
+            "url": "/product?Pizza-ortolana---3",
+            "img": "./imagens/item-img.jpeg"
+        },
+        {
+            "id": 4,
+            "name": "The Yammy Chocolate",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "price": 10.10,
+            "category": "salad",
+            "url": "/product?The-Yammy-Chocolate---4",
+            "img": "./imagens/item-img.jpeg"
+        },
+        {
+            "id": 5,
+            "name": "French Fries",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "price": 10.10,
+            "category": "burguer",
+            "url": "/product?French-Fries---5",
+            "img": "./imagens/item-img.jpeg"
+        },
+        {
+            "id": 6,
+            "name": "GARLIC FINGERS",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "price": 10.10,
+            "category": "burguer",
+            "img": "./imagens/item-img.jpeg",
+            "url": "/product?GARLIC-FINGERS---6"
+        },
+        {
+            "id": 7,
+            "name": "PIZZA PESTO GENOVESE",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "price": 10.10,
+            "category": "salad",
+            "img": "./imagens/item-img.jpeg",
+            "url": "/product?PIZZA-PESTO-GENOVESE---7"
+        },
+        {
+            "id": 8,
+            "name": "PIZZA PESTO GENOVESE",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "price": 10.10,
+            "category": "special menu",
+            "img": "./imagens/item-img.jpeg",
+            "url": "/product?PIZZA-PESTO-GENOVESE---7"
+        },
+        {
+            "id": 9,
+            "name": "PIZZA PESTO GENOVESE",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "price": 10.10,
+            "category": "special menu",
+            "img": "./imagens/item-img.jpeg",
+            "url": "/product?PIZZA-PESTO-GENOVESE---7"
+        },
+        {
+            "id": 10,
+            "name": "PIZZA PESTO GENOVESE",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "price": 10.10,
+            "category": "special menu",
+            "img": "./imagens/item-img.jpeg",
+            "url": "/product?PIZZA-PESTO-GENOVESE---7"
+        },
+        {
+            "id": 11,
+            "name": "PIZZA PESTO GENOVESE",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "price": 10.10,
+            "category": "special menu",
+            "img": "./imagens/item-img.jpeg",
+            "url": "/product?PIZZA-PESTO-GENOVESE---7"
+        }
+    ],
+
+    "categories": [
+        {
+            "id": 1,
+            "name":"pizza"
+        },
+        {
+            "id": 2,
+            "name":"salad"
+        },
+        {
+            "id": 3,
+            "name":"burguer"
+        }
+    ]
+}

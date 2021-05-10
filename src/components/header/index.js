@@ -2,6 +2,7 @@ import React from 'react'
 import './styles.scss';
 import logoImage from './images/logo-header.png';
 import iconMoto from './images/header-moto-icon.png'
+import {Link} from 'react-router-dom'
 
 const menu = [
     'home',
@@ -15,7 +16,7 @@ const Header = () => {
         <header className="food-header">
             <div className="food-header--wrapper">
                 <span>
-                    <img src={logoImage} />
+                    <Link to='/'><img src={logoImage} /></Link>
                 </span>
                 <div className="food-header--menu">
                     <ul>

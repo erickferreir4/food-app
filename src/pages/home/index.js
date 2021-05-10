@@ -4,16 +4,28 @@ import Menu from './../../components/menu'
 import Items from './../../components/items'
 import Shelf from './../../components/shelf'
 import Category from './../../components/category'
+import { HomeStorage, HomeContext } from './../../context/HomeContext';
+
+const HomeWrapper = () => {
+
+    const {shelf} = React.useContext(HomeContext)
+
+    return(
+        <>
+           <Main />
+           <Menu />
+           <Items />
+           <Shelf items={shelf}/>
+           <Category />
+        </>
+    )
+}
 
 const Home = () => {
     return(
-        <>
-            <Main />
-            <Menu />
-            <Items />
-            <Shelf />
-            <Category />
-        </>
+        <HomeStorage>
+            <HomeWrapper/>
+        </HomeStorage>
     )
 }
 

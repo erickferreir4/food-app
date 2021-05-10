@@ -1,7 +1,8 @@
 import React from 'react';
 import './styles.scss';
 import imgProd from './imagens/item-img.jpeg'
-
+import {HomeContext} from './../../context/HomeContext'
+import {Link} from 'react-router-dom'
 
 
 const allItems = [
@@ -65,19 +66,22 @@ const allItems = [
 
 
 const Items = () => {
+
+    const {menuItem} = React.useContext(HomeContext)
+
     return(
         <div className="food-items">
             <div className="food-items--wrapper">
                 <ul className="food-items--items">
-                    {allItems.map( ({name, id, price, category, img}) => (
+                    {menuItem.map( ({name, id, price, category, img, url}) => (
                         <li className="food-items--item" key={id}>
-                            <a href="#">
-                                <span><img src={img} title={name}/></span>
+                            <Link to={url}>
+                                <span><img src={imgProd} title={name}/></span>
                                 <span>
                                     <h3>{name}</h3>
                                     <p>${price}</p>
                                 </span>
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>

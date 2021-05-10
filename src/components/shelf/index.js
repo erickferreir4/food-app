@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.scss';
 import imgProd from './imagens/imgProd.jpeg'
+import {Link} from 'react-router-dom';
 
 const shelfItems = [
     {
@@ -35,19 +36,22 @@ const shelfItems = [
 
 
 
-const Shelf = () => {
+const Shelf = (props) => {
+
     return(
         <div className="food-shelf">
             <div className="food-shelf--wrapper">
                 <h2>Explore Our <strong>Special Menu</strong></h2>
                 
                 <ul className="food-shelf--items">
-                    {shelfItems.map( ({name, id, category, img, price}) => (
-                        <li className="food-shelf--item"><a href="#">
-                            <span><img src={img} /></span>
-                            <h3>{name}</h3>
-                            <p>${price}</p>
-                        </a></li>
+                    {props.items.map( ({name, id, category, img, price, url}) => (
+                        <li key={id} className="food-shelf--item">
+                            <Link to={url}>
+                                <span><img src={imgProd} /></span>
+                                <h3>{name}</h3>
+                                <p>${price}</p>
+                            </Link>
+                        </li>
                     ))}
                 </ul>
             </div>

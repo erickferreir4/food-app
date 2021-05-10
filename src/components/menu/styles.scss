@@ -54,6 +54,14 @@
                         background-color:#cc3333;
                     }
                 }
+
+                &.is--active {
+                    a {
+                        border: 1px solid #e6e6e6;
+                        color:#fff;
+                        background-color:#cc3333;
+                    }
+                }
             }
         }
 

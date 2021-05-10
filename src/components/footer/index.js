@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.scss';
 import logoFooter from './imagens/logo-footer.png';
+import {Link} from 'react-router-dom'
 
 const menu = [
     'home',
@@ -16,7 +17,7 @@ const Footer = () => {
             <div className="food-footer">
                 <div className="food-footer--wrapper">
                     <span>
-                        <img src={logoFooter}/>
+                        <Link to='/'><img src={logoFooter}/></Link>
                     </span>
                     
                     <ul className="food-footer--menu">
