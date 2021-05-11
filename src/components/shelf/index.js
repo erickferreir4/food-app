@@ -41,7 +41,7 @@ const Shelf = (props) => {
     return(
         <div className="food-shelf">
             <div className="food-shelf--wrapper">
-                <h2>Explore Our <strong>Special Menu</strong></h2>
+                <h2>{props.title}</h2>
                 
                 <ul className="food-shelf--items">
                     {props.items.map( ({name, id, category, img, price, url}) => (

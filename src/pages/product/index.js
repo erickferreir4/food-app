@@ -4,21 +4,27 @@ import Breadcrumb from './../../components/breadcrumb'
 import Shelf from './../../components/shelf'
 import {ProductStorage, ProductContext} from './../../context/ProductContext'
 import imgItem from './imagens/item-img.jpeg'
-
-const item = {
-    id: 1,
-    name: 'Set Menu Special',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    price: 10.10,
-    category: 'pizza',
-    img: imgItem,
-    url: '/product/Set Menu Special---1'
-
-}
+import { CartContext } from './../../context/CartContext'
 
 const ProductPage = () => {
 
-    const {product, shelf} = React.useContext(ProductContext)
+    const {product, shelf, shelfTitle} = React.useContext(ProductContext)
+    const {addItem, cartItems} = React.useContext(CartContext)
+    const [incart, setIncart] = React.useState(false)
+
+    React.useEffect(() => {
+
+        if(cartItems.filter(item => item.id === product.id).length) {
+            setIncart(true)
+        }
+
+    }, [cartItems])
+
+
+    function handleClick(ev) {
+        if(incart) return;
+        addItem(product.id)
+    }
 
     return(
         <div className="food-product">
@@ -39,7 +45,9 @@ const ProductPage = () => {
                         <div className="food-product--info">
                             <h2>{product.name}</h2>
                             <p>Price: ${product.price}</p>
-                            <button>buy</button>
+                            <button onClick={handleClick}>
+                                {incart ? 'in Cart' : 'buy'}
+                            </button>
 
                             <span>
                                 <h3>Description</h3>
@@ -50,7 +58,7 @@ const ProductPage = () => {
                 </div>
             </div>
 
-            <Shelf items={shelf}/>
+            <Shelf items={shelf} title={shelfTitle}/>
         </div>
     )
 }
@@ -58,9 +66,9 @@ const ProductPage = () => {
 
 const Product = () => {
     return(
-        <ProductStorage>
-            <ProductPage />
-        </ProductStorage>
+            <ProductStorage>
+                <ProductPage />
+            </ProductStorage>
     )
 }
 

@@ -1,0 +1,55 @@
+import React from 'react';
+import './styles.scss'
+import { CartContext } from './../../context/CartContext'
+import iconCart from './imagens/shopping-cart.png'
+
+const Minicart = () => {
+
+    const { cartItems, value } = React.useContext(CartContext)
+    const [iscart, setIscart] = React.useState(false)
+
+    return(
+        <div className="food-minicart">
+            <div className={iscart ? "food-minicart--wrapper is--active" : "food-minicart--wrapper"}>
+                <span className="food-minicart--close">
+                    Khadyo Restaurant 
+                    <button onClick={() => setIscart(false)}>+</button>
+                </span>
+                <div className="food-minicart--items">
+                    <p>No item added</p>
+                </div>
+                <div>
+                <div className="food-minicart--value">
+                    <span>
+                        <p>Subtotal</p>
+                        <p>$0.00</p>
+                    </span>
+                    <span>
+                        <p>Vat(10%)</p>
+                        <p>$0.00</p>
+                    </span>
+                    <span>
+                        <p>Total</p>
+                        <p>$0.00</p>
+                    </span>
+                </div>
+                <button 
+                    className="food-minicart--checkout">Checkout</button>
+                </div>
+            </div>
+
+            <div className="food-minicart--button">
+                <div 
+                    onClick={() => setIscart(true)}
+                    className="food-minicart--button--wrapper">
+                    <span className="food-minicart-qty"><img src={iconCart} />
+                        {cartItems.length}{cartItems.length > 1 ? ' items' : ' item'}
+                    </span>  
+                    <span className="food-minicart-value">${value.toFixed(2)}</span>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Minicart

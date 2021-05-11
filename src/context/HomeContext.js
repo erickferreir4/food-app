@@ -9,6 +9,7 @@ export const HomeStorage = ({children}) => {
     const [menuItem, setMenuItem] = React.useState(null)
     const [menuActive, setMenuActive] = React.useState(null)
     const [shelf, setShelf] = React.useState(null)
+    const [shelfTitle, setShelfTitle] = React.useState(null)
 
     React.useEffect( async () => {
         setLoading(true)
@@ -26,6 +27,7 @@ export const HomeStorage = ({children}) => {
         response = await fetch(`http://localhost:3000/products?category=special menu`)
         json = await response.json()
         setShelf(json)
+        setShelfTitle('special menu')
 
 
 
@@ -51,7 +53,8 @@ export const HomeStorage = ({children}) => {
                 getItems,
                 menuActive,
                 menuItem,
-                shelf
+                shelf,
+                shelfTitle
             }}>
 
             {children}

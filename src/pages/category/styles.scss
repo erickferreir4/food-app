@@ -1,0 +1,19 @@
+.food-category-page {
+    &--wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+.food-category-page {
+    .food-shelf {
+        background:none;
+    
+        &--wrapper {
+            padding-top: 50px;
+        }
+        &--item {
+            background: none;
+        }
+    
+    }
+}

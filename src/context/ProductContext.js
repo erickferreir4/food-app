@@ -8,6 +8,7 @@ export const ProductStorage = ({children}) => {
     const [product, setProduct] = React.useState(null)
     const [loading, setLoading] = React.useState(true)
     const [shelf, setShelf] = React.useState(null)
+    const [shelfTitle, setShelfTitle] = React.useState(null)
     const location = useLocation()
 
     const search = window.location.search.replace(/\?/g, '')
@@ -22,6 +23,7 @@ export const ProductStorage = ({children}) => {
         response = await fetch(`http://localhost:3000/products?category=special menu`)
         json = await response.json()
         setShelf(json)
+        setShelfTitle('special menu')
 
         setLoading(false)
     }, [location]) 
@@ -31,7 +33,7 @@ export const ProductStorage = ({children}) => {
     }
 
     return (
-        <ProductContext.Provider value={{product, shelf}}>
+        <ProductContext.Provider value={{product, shelf, shelfTitle}}>
             {children} 
         </ProductContext.Provider>
     )
