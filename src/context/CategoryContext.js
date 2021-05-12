@@ -15,7 +15,8 @@ const CategoryStorage = ({children}) => {
     React.useEffect( async () => {
         setLoading(true)
 
-        let uri = `http://localhost:3000/products${search.length ? `?category=${search.replace(/\?/g, '')}` : ''}`
+        //let uri = `http://localhost:3000/products${search.length ? `?category=${search.replace(/\?/g, '')}` : ''}`
+        let uri = `http://localhost:8000/api/products${search.length ? `?category=${search.replace(/\?/g, '')}` : ''}`
         let response = await fetch(uri)
         let json = await response.json()
 

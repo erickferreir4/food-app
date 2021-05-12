@@ -3,7 +3,6 @@ import './styles.scss';
 import logoImage from './images/logo-header.png';
 import iconMoto from './images/header-moto-icon.png'
 import {Link} from 'react-router-dom'
-import {CartContext} from './../../context/CartContext'
 
 const menu = [
     'home',
@@ -13,9 +12,6 @@ const menu = [
 ]
 
 const Header = () => {
-
-    //const {cartItems} = React.useContext(CartContext)
-    const cartItems = []
 
     return(
         <header className="food-header">
@@ -40,9 +36,7 @@ const Header = () => {
                         <strong>12345</strong>
 
                     </span>
-                    <button className="food-header--button">Cart
-                        <span className="food-header-cart-qty">{cartItems.length}</span>
-                    </button>
+                    <button className="food-header--button">Login</button>
                 </div>
 
             </div>

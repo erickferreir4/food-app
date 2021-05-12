@@ -5,7 +5,7 @@ import iconCart from './imagens/shopping-cart.png'
 
 const Minicart = () => {
 
-    const { cartItems, value } = React.useContext(CartContext)
+    const { cartItems, value, vat, removeItem } = React.useContext(CartContext)
     const [iscart, setIscart] = React.useState(false)
 
     return(
@@ -15,22 +15,40 @@ const Minicart = () => {
                     Khadyo Restaurant 
                     <button onClick={() => setIscart(false)}>+</button>
                 </span>
-                <div className="food-minicart--items">
-                    <p>No item added</p>
+                <div className="food-minicart--items--wrapper">
+                    {cartItems.length ? 
+                    <ul className="food-minicart--items">
+                        {cartItems.map( (item, index)=> (
+                            <li key={index}>
+                                <button 
+                                    onClick={() => removeItem(item.id)}
+                                    className="food-minicart--remove">+</button>
+                                <span>
+                                    <img src={item.img} />
+                                </span>
+                                <span>
+                                    <p>{item.name}</p>
+                                    <strong>${item.price}</strong>
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                    : <p>No item added</p> }
+
                 </div>
                 <div>
                 <div className="food-minicart--value">
                     <span>
                         <p>Subtotal</p>
-                        <p>$0.00</p>
+                        <p>${value.toFixed(2)}</p>
                     </span>
                     <span>
                         <p>Vat(10%)</p>
-                        <p>$0.00</p>
+                        <p>${vat.toFixed(2)}</p>
                     </span>
                     <span>
                         <p>Total</p>
-                        <p>$0.00</p>
+                        <p>${(value + vat).toFixed(2)}</p>
                     </span>
                 </div>
                 <button 

@@ -15,13 +15,18 @@ export const ProductStorage = ({children}) => {
 
     React.useEffect(async () => {
         setLoading(true)
-        let response = await fetch(`http://localhost:3000/products?url=/product?${search}`)
+
+        //let response = await fetch(`http://localhost:3000/products?url=/product?${search}`)
+        let response = await fetch(`http://localhost:8000/api/products?url=/product?${search}`)
         let json = await response.json()
+        console.log(json)
         setProduct(json[0])
 
 
-        response = await fetch(`http://localhost:3000/products?category=special menu`)
+        //response = await fetch(`http://localhost:3000/products?category=special menu`)
+        response = await fetch(`http://localhost:8000/api/products?category=special menu`)
         json = await response.json()
+        console.log(json)
         setShelf(json)
         setShelfTitle('special menu')
 

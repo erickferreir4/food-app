@@ -5,13 +5,9 @@ import Shelf from './../../components/shelf'
 import Breadcrumb from './../../components/breadcrumb'
 
 
-
-
-
 const CategoryPage = () => {
 
     const {items, title} = React.useContext(CategoryContext)
-    console.log(items)
 
     return(
         <div className="food-category-page">
@@ -22,8 +18,6 @@ const CategoryPage = () => {
         </div>
     )
 }
-
-
 
 
 const Category = () => {

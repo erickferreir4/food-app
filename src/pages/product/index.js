@@ -3,7 +3,6 @@ import './styles.scss';
 import Breadcrumb from './../../components/breadcrumb'
 import Shelf from './../../components/shelf'
 import {ProductStorage, ProductContext} from './../../context/ProductContext'
-import imgItem from './imagens/item-img.jpeg'
 import { CartContext } from './../../context/CartContext'
 
 const ProductPage = () => {
@@ -16,6 +15,9 @@ const ProductPage = () => {
 
         if(cartItems.filter(item => item.id === product.id).length) {
             setIncart(true)
+        }
+        else {
+            setIncart(false)
         }
 
     }, [cartItems])
@@ -36,7 +38,7 @@ const ProductPage = () => {
                     <div className="food-product--box">
                         <div className="food-product--img">
                             <span>
-                                <img src={imgItem} />
+                                <img src={product.img} />
                             </span>
                         </div>
                     </div>
