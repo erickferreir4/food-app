@@ -10,6 +10,8 @@ const Items = () => {
 
     if(menuItemLoading) return <Lazy />
 
+    const hostname = 'http://'+window.location.hostname+':8000'
+
     return(
         <div className="food-items">
             <div className="food-items--wrapper">
@@ -17,7 +19,7 @@ const Items = () => {
                     {menuItem.map( ({name, id, price, category, img, url}) => (
                         <li className="food-items--item" key={id}>
                             <Link to={url}>
-                                <span><img src={img} title={name}/></span>
+                                <span><img src={hostname+img} title={name}/></span>
                                 <span>
                                     <h3>{name}</h3>
                                     <p>${price}</p>
