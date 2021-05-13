@@ -7,9 +7,8 @@ services:
             dockerfile: Dockerfile
 
         volumes:
-            - '.:/app'
+            - .:/app
             - /app/node_modules
-            stdin_open: true
 
         ports:
             - '8080:8080'
