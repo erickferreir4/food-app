@@ -9,23 +9,9 @@ import Lazy from './Lazy'
 const ProductPage = () => {
 
     const {product, shelf, shelfTitle, productLoading} = React.useContext(ProductContext)
-    const {addItem, cartItems} = React.useContext(CartContext)
-    const [incart, setIncart] = React.useState(false)
-
-    React.useEffect(() => {
-
-        if(cartItems.filter(item => item.id === product.id).length) {
-            setIncart(true)
-        }
-        else {
-            setIncart(false)
-        }
-
-    }, [cartItems])
-
+    const {addItem, cartItems, incartLoad} = React.useContext(CartContext)
 
     function handleClick(ev) {
-        if(incart) return;
         addItem(product.id)
     }
 
@@ -50,8 +36,10 @@ const ProductPage = () => {
                         <div className="food-product--info">
                             <h2>{product.name}</h2>
                             <p>Price: ${product.price}</p>
-                            <button onClick={handleClick}>
-                                {incart ? 'in Cart' : 'buy'}
+                            <button className={incartLoad ? 'food-product--load' : ''} onClick={handleClick}>
+                                {cartItems.filter( item => item.id === product.id).length ? 
+                                    'in Cart'
+                                    : 'buy'}
                             </button>
 
                             <span>

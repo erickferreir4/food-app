@@ -1,4 +1,5 @@
 import React from 'react';
+import {useLocation} from 'react-router-dom'
 
 const CartContext = React.createContext(null)
 
@@ -7,6 +8,8 @@ const CartStorage = ({children}) => {
     const [cartItems, setCartItems] = React.useState([])
     const [value, setValue] = React.useState(0)
     const [vat, setVat] = React.useState(0)
+    const {hostname} = window.location
+    const [incartLoad, setIncartLoad] = React.useState(false)
 
     React.useEffect(() => {
         setCartItems(JSON.parse(localStorage.getItem('cartItems') || '[]'))
@@ -25,11 +28,15 @@ const CartStorage = ({children}) => {
 
     async function addItem(id) {
 
-        //let response = await fetch(`http://localhost:3000/products/${id}`)
-        let response = await fetch(`http://localhost:8000/api/products?id=${id}`)
-        let json = await response.json()
+        if( cartItems.filter(item => item.id === id ).length ) return
 
-        if( cartItems.filter(item => item.id === json.id).length ) return
+        setIncartLoad(true)
+        //let response = await fetch(`http://localhost:3000/products/${id}`)
+        let response = await fetch(`http://${hostname}:8000/api/products?id=${id}`)
+        let json = await response.json()
+        setIncartLoad(false)
+
+        if( cartItems.filter(item => item.id === json.id ).length ) return
 
         const items = [...cartItems, json[0]]
         setCartItems(items)
@@ -43,7 +50,7 @@ const CartStorage = ({children}) => {
     }
 
     return(
-        <CartContext.Provider value={{cartItems, addItem, value, vat, removeItem}}>
+        <CartContext.Provider value={{cartItems, addItem, value, vat, removeItem, incartLoad}}>
             {children}
         </CartContext.Provider>
     )

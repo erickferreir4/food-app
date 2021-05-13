@@ -25,6 +25,11 @@
         }
     }
 
+    &--load {
+        opacity: 0.6;
+        pointer-events:none;
+    }
+
     &--info {
         padding: 0 50px;
         display: flex;
