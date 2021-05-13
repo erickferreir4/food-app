@@ -2,20 +2,20 @@ version: "3.3"
 
 services:
     food-app:
-
         build:
             context: .
-            ockerfile: Dockerfile
+            dockerfile: Dockerfile
 
+        volumes:
+            - '.:/app'
+            - /app/node_modules
             stdin_open: true
-            volumes:
-                - '.:/app'
-                  - /app/node_modules
 
         ports:
             - '8080:8080'
-              environment:
-                  - CHOKIDAR_USEPOLLING=true
+
+        environment:
+            - CHOKIDAR_USEPOLLING=true
 
     api-app:
         build:
