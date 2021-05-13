@@ -7,6 +7,8 @@ const Minicart = () => {
 
     const { cartItems, value, vat, removeItem } = React.useContext(CartContext)
     const [iscart, setIscart] = React.useState(false)
+    const hostname = 'http://'+window.location.hostname+':8000'
+
 
     return(
         <div className="food-minicart">
@@ -24,7 +26,7 @@ const Minicart = () => {
                                     onClick={() => removeItem(item.id)}
                                     className="food-minicart--remove">+</button>
                                 <span>
-                                    <img src={item.img} />
+                                    <img src={hostname+item.img} />
                                 </span>
                                 <span>
                                     <p>{item.name}</p>
