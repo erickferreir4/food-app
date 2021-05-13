@@ -10,8 +10,6 @@ const CategoryStorage = ({children}) => {
     const [items, setItems] = React.useState(null);
     const [title, setTitle] = React.useState(null)
 
-    console.log(search)
-
     React.useEffect( async () => {
         setLoading(true)
 
@@ -27,16 +25,12 @@ const CategoryStorage = ({children}) => {
         setLoading(false)
     }, [search])
 
-    if(loading) {
-        return(
-            <div>loading...</div>
-        )
-    }
 
     return(
         <CategoryContext.Provider value={{
                                         items,
-                                        title
+                                        title,
+                                        loading
                                     }}>
             {children}
         </CategoryContext.Provider>

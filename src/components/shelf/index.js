@@ -1,8 +1,11 @@
 import React from 'react';
 import './styles.scss';
 import {Link} from 'react-router-dom';
+import Lazy from './Lazy'
 
 const Shelf = (props) => {
+
+    if(props.loading) return <Lazy />
 
     return(
         <div className="food-shelf">

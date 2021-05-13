@@ -3,11 +3,13 @@ import './styles.scss';
 import { CategoryStorage, CategoryContext } from './../../context/CategoryContext'
 import Shelf from './../../components/shelf'
 import Breadcrumb from './../../components/breadcrumb'
-
+import Lazy from './Lazy'
 
 const CategoryPage = () => {
 
-    const {items, title} = React.useContext(CategoryContext)
+    const {items, title, loading} = React.useContext(CategoryContext)
+
+    if( loading ) return <Lazy />
 
     return(
         <div className="food-category-page">

@@ -4,10 +4,11 @@ import Breadcrumb from './../../components/breadcrumb'
 import Shelf from './../../components/shelf'
 import {ProductStorage, ProductContext} from './../../context/ProductContext'
 import { CartContext } from './../../context/CartContext'
+import Lazy from './Lazy'
 
 const ProductPage = () => {
 
-    const {product, shelf, shelfTitle} = React.useContext(ProductContext)
+    const {product, shelf, shelfTitle, productLoading} = React.useContext(ProductContext)
     const {addItem, cartItems} = React.useContext(CartContext)
     const [incart, setIncart] = React.useState(false)
 
@@ -27,6 +28,8 @@ const ProductPage = () => {
         if(incart) return;
         addItem(product.id)
     }
+
+    if(productLoading) return <Lazy />
 
     return(
         <div className="food-product">

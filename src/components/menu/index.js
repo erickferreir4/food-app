@@ -1,16 +1,19 @@
 import React from 'react';
 import './styles.scss'
 import { HomeContext } from './../../context/HomeContext'
+import Lazy from './Lazy'
 
 const Menu = () => {
 
-    const {menu, getItems, menuActive} = React.useContext(HomeContext)
+    const {menu, getItems, menuActive, menuLoading} = React.useContext(HomeContext)
 
     async function handleClick(ev) {
         ev.preventDefault()
         let search = ev.target.innerText.toLowerCase()
         getItems(search)
     }
+
+    if(menuLoading) return <Lazy />
 
     return(
         <div className="food-menu">

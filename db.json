@@ -203,19 +203,45 @@
     "categories": [
         {
             "id": 1,
-            "name":"pizza"
+            "name":"special menu",
+            "description": "Sale off 50% only this week",
+            "link":"/category?special%20menu" ,
+            "img":"http://localhost:8000/imagens/grid1.jpeg"
         },
         {
             "id": 2,
-            "name":"salad"
+            "name":"pizza",
+            "description": "Sale off 50% only this week",
+            "link":"/category?pizza" ,
+            "img":"http://localhost:8000/imagens/grid2.jpeg"
         },
         {
             "id": 3,
-            "name":"burguer"
+            "name":"burguer",
+            "description": "Sale off 50% only this week",
+            "link":"/category?burguer" ,
+            "img":"http://localhost:8000/imagens/grid2.jpeg"
         },
         {
             "id": 4,
-            "name":"special menu"
+            "name":"salad",
+            "description": "Sale off 50% only this week",
+            "link":"/category?salad" ,
+            "img":"http://localhost:8000/imagens/grid2.jpeg"
+        },
+        {
+            "id": 5,
+            "name":"vegan",
+            "description": "Sale off 50% only this week",
+            "link":"/category?vegan" ,
+            "img":"http://localhost:8000/imagens/grid2.jpeg"
+        },
+        {
+            "id": 6,
+            "name":"coffe",
+            "description": "Sale off 50% only this week",
+            "link":"/category?coffe" ,
+            "img":"http://localhost:8000/imagens/grid1.jpeg"
         }
     ]
 }

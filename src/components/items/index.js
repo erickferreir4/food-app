@@ -2,10 +2,13 @@ import React from 'react';
 import './styles.scss';
 import {HomeContext} from './../../context/HomeContext'
 import {Link} from 'react-router-dom'
+import Lazy from './Lazy'
 
 const Items = () => {
 
-    const {menuItem} = React.useContext(HomeContext)
+    const {menuItem, menuItemLoading} = React.useContext(HomeContext)
+
+    if(menuItemLoading) return <Lazy />
 
     return(
         <div className="food-items">

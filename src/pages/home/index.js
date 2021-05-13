@@ -8,14 +8,14 @@ import { HomeStorage, HomeContext } from './../../context/HomeContext';
 
 const HomeWrapper = () => {
 
-    const {shelf, shelfTitle} = React.useContext(HomeContext)
+    const {shelf, shelfTitle, shelfLoading} = React.useContext(HomeContext)
 
     return(
         <>
            <Main />
            <Menu />
            <Items />
-           <Shelf items={shelf} title={shelfTitle}/>
+           <Shelf items={shelf} title={shelfTitle} loading={shelfLoading}/>
            <Category />
         </>
     )
