@@ -16,6 +16,7 @@ export const HomeStorage = ({children}) => {
     const [menuItemLoading, setMenuItemLoading] = React.useState(true)
     const [mosaico, setMosaico] = React.useState(true)
     const [mosaicoLoading, setMosaicoLoading] = React.useState(true)
+    console.log(window.location)
 
     React.useEffect( async () => {
 
