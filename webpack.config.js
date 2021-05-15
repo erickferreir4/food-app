@@ -1,13 +1,6 @@
 const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 
 module.exports = {
-    output: {
-        path: path.resolve(__dirname, './dist'),
-        filename: "bundle.js",
-        clean: true,
-    },
     module: {
         rules: [
             {
@@ -31,17 +24,33 @@ module.exports = {
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
+                use: [
+                    {
+                        loader: 'url-loader',
+                        //options: {
+                        //    limit: 10000,
+                        //    name: 'images/[name]-[hash].[ext]'
+                        //}
+                    }
+                ]
             }
         ],
     },
 
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './public/index.html',
-            favicon: "./public/favicon.png"
-        }),
-    ],
     devServer: {
         historyApiFallback: true,
+        proxy: {
+            '/api': {
+                target: 'http://localhost:8000',
+                secure: false
+            }
+        },
+        contentBase: path.join(__dirname, 'public')
+    },
+
+    plugins: [
+    ],
+    output: {
+        path: path.resolve(__dirname, 'public'),
     },
 };

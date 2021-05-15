@@ -1,14 +1,11 @@
 import React from 'react';
 import './styles.scss'
 import { CartContext } from './../../context/CartContext'
-import iconCart from './imagens/shopping-cart.png'
 
 const Minicart = () => {
 
     const { cartItems, value, vat, removeItem } = React.useContext(CartContext)
     const [iscart, setIscart] = React.useState(false)
-    const hostname = 'http://'+window.location.hostname+':8000'
-
 
     return(
         <div className="food-minicart">
@@ -26,7 +23,7 @@ const Minicart = () => {
                                     onClick={() => removeItem(item.id)}
                                     className="food-minicart--remove">+</button>
                                 <span>
-                                    <img src={hostname+item.img} />
+                                    <img src={item.img} />
                                 </span>
                                 <span>
                                     <p>{item.name}</p>
@@ -62,7 +59,7 @@ const Minicart = () => {
                 <div 
                     onClick={() => setIscart(true)}
                     className="food-minicart--button--wrapper">
-                    <span className="food-minicart-qty"><img src={iconCart} />
+                    <span className="food-minicart-qty"><img src="/images/shopping-cart.png" />
                         {cartItems.length}{cartItems.length > 1 ? ' items' : ' item'}
                     </span>  
                     <span className="food-minicart-value">${value.toFixed(2)}</span>

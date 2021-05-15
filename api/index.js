@@ -18,16 +18,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 //carregar arquivos estaticos
-app.use(express.static('public'));
-
+//app.use(express.static(`${__dirname}/../public`));
 
 //router
 app.use('/api', products)
 
 
-const baseDir = `${__dirname}/../dist/`
+//const baseDir = `${__dirname}/../dist/`
+const baseDir = `${__dirname}/../public/`
 app.use(express.static(`${baseDir}`))
-app.get('/', (req, res) => res.sendfile('index.html' , { root : baseDir } ))
+app.get('*', (req, res) => res.sendfile('index.html' , { root : baseDir } ))
 
 
 let porta = 8000

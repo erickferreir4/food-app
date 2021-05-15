@@ -10,7 +10,6 @@ const ProductPage = () => {
 
     const {product, shelf, shelfTitle, productLoading} = React.useContext(ProductContext)
     const {addItem, cartItems, incartLoad} = React.useContext(CartContext)
-    const hostname = 'http://'+window.location.hostname+':8000'
 
 
     function handleClick(ev) {
@@ -29,7 +28,7 @@ const ProductPage = () => {
                     <div className="food-product--box">
                         <div className="food-product--img">
                             <span>
-                                <img src={hostname+product.img} />
+                                <img src={product.img} />
                             </span>
                         </div>
                     </div>

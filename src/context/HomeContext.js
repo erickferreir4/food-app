@@ -10,22 +10,19 @@ export const HomeStorage = ({children}) => {
     const [shelf, setShelf] = React.useState(null)
     const [shelfTitle, setShelfTitle] = React.useState(null)
 
-    const [loading, setLoading] = React.useState(true)
     const [shelfLoading, setShelfLoading] = React.useState(true)
     const [menuLoading, setMenuLoading] = React.useState(true)
     const [menuItemLoading, setMenuItemLoading] = React.useState(true)
     const [mosaico, setMosaico] = React.useState(true)
     const [mosaicoLoading, setMosaicoLoading] = React.useState(true)
 
-    const {hostname} = window.location
 
     React.useEffect( async () => {
 
         setMenuLoading(true)
         setMosaicoLoading(true)
-        //let response = await fetch(`http://localhost:3000/categories`)
-        //let response = await fetch(`http://localhost:8000/api/categories`)
-        let response = await fetch(`http://${hostname}:8000/api/categories`)
+
+        let response = await fetch(`/api/categories`)
         let json = await response.json()
         setMenu(json)
         setMosaico(json)
@@ -34,9 +31,7 @@ export const HomeStorage = ({children}) => {
 
 
         setMenuItemLoading(true)
-        //response = await fetch(`http://localhost:3000/products?category=${json[0]?.name}`)
-        //response = await fetch(`http://localhost:8000/api/products?category=${json[0]?.name}`)
-        response = await fetch(`http://${hostname}:8000/api/products?category=${json[0]?.name}`)
+        response = await fetch(`/api/products?category=${json[0]?.name}`)
         json = await response.json()
         setMenuItem(json)
         setMenuActive(json[0]?.category)
@@ -47,8 +42,7 @@ export const HomeStorage = ({children}) => {
     React.useEffect( async () => {
 
         setShelfLoading(true)
-        //response = await fetch(`http://localhost:3000/products?category=special menu`)
-        let response = await fetch(`http://${hostname}:8000/api/products?category=special menu`)
+        let response = await fetch(`/api/products?category=special menu`)
         let json = await response.json()
         setShelf(json)
         setShelfTitle('special menu')
@@ -61,8 +55,7 @@ export const HomeStorage = ({children}) => {
     async function getItems(search) {
         setMenuActive(search)
         setMenuItemLoading(true)
-        //let response = await fetch(`http://localhost:3000/products?category=${search}`)
-        let response = await fetch(`http://${hostname}:8000/api/products?category=${search}`)
+        let response = await fetch(`/api/products?category=${search}`)
         let json = await response.json()
         setMenuItem(json)
         setMenuItemLoading(false)

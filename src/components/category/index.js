@@ -7,7 +7,6 @@ import {Link} from 'react-router-dom';
 const Category = () => {
 
     const {mosaico, mosaicoLoading} = React.useContext(HomeContext)
-    const hostname = 'http://'+window.location.hostname+':8000'
 
     if(mosaicoLoading) return <Lazy />
 
@@ -18,7 +17,7 @@ const Category = () => {
                     {mosaico.map( ({link, name, img, description, id}) => (
                         <li className="food-category--item" key={id}>
                             <Link to={link}>
-                                <img src={hostname+img} />
+                                <img src={img} />
                                 <span>
                                     <h3>{name}</h3>
                                     <p>{description}</p>

@@ -1,7 +1,5 @@
 import React from 'react'
 import './styles.scss';
-import logoImage from './images/logo-header.png';
-import iconMoto from './images/header-moto-icon.png'
 import {Link} from 'react-router-dom'
 
 const menu = [
@@ -18,7 +16,7 @@ const Header = () => {
             <div className="food-header--wrapper">
 
                 <span>
-                    <Link to='/'><img src={logoImage} /></Link>
+                    <Link to='/'><img src="/images/logo-header.png" /></Link>
                 </span>
 
                 <div className="food-header--menu">
@@ -26,7 +24,7 @@ const Header = () => {
                         {menu.map( item => <li key={item}><a href="#">{item}</a></li>)}
                     </ul>
                     <span className="food-header--moto">
-                        <img src={iconMoto} />
+                        <img src="/images/header-moto-icon.png" />
                     </span>
                 </div>
                 

@@ -10,13 +10,12 @@ const CategoryStorage = ({children}) => {
     const [items, setItems] = React.useState(null);
     const [title, setTitle] = React.useState(null)
 
-    const {hostname, search} = window.location
+    const {search} = window.location
 
     React.useEffect( async () => {
         setLoading(true)
 
-        //let uri = `http://localhost:3000/products${search.length ? `?category=${search.replace(/\?/g, '')}` : ''}`
-        let uri = `http://${hostname}:8000/api/products${search.length ? `?category=${search.replace(/\?/g, '')}` : ''}`
+        let uri = `/api/products${search.length ? `?category=${search.replace(/\?/g, '')}` : ''}`
         let response = await fetch(uri)
         let json = await response.json()
 

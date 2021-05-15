@@ -18,7 +18,7 @@ services:
 
     api-app:
         build:
-            context: ./../src/api
+            context: ./../api
             dockerfile: Dockerfile
 
         working_dir: /app
@@ -27,5 +27,5 @@ services:
             - "8000:8000"
 
         volumes:
-            - ./../src/api:/app
+            - ./../api:/app
             - /app/node_modules

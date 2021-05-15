@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles.scss';
-import bannerPromo from './imagens/burger-promo.png'
 
 const Main = () => {
 
@@ -15,7 +14,7 @@ const Main = () => {
                 </div>
 
                 <div className="food-main--right">
-                    <span><img src={bannerPromo} /></span> 
+                    <span><img src="/images/burger-promo.png" /></span> 
                 </div>
             </div>
         </div>
