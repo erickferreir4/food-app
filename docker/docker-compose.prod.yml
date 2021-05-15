@@ -13,4 +13,4 @@ services:
             - '/app/api/node_modules'
 
         ports:
-            - '8000:8000'
+            - '1337:8000'
