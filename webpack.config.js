@@ -1,4 +1,6 @@
 const path = require("path");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 module.exports = {
     module: {
@@ -23,16 +25,10 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset/resource',
-                use: [
-                    {
-                        loader: 'url-loader',
-                        //options: {
-                        //    limit: 10000,
-                        //    name: 'images/[name]-[hash].[ext]'
-                        //}
-                    }
-                ]
+                loader: 'file-loader',
+                options: {
+                    outputPath: 'images'
+                }
             }
         ],
     },
@@ -49,8 +45,14 @@ module.exports = {
     },
 
     plugins: [
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: './public/index.html',
+            minify: false,
+            chunks: ['index']
+        }),
     ],
     output: {
-        path: path.resolve(__dirname, 'public'),
+        path: path.resolve(__dirname, 'dist'),
     },
 };

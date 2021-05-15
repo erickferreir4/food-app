@@ -25,7 +25,7 @@ app.use('/api', products)
 
 
 //const baseDir = `${__dirname}/../dist/`
-const baseDir = `${__dirname}/../public/`
+const baseDir = `${__dirname}/../dist/`
 app.use(express.static(`${baseDir}`))
 app.get('*', (req, res) => res.sendfile('index.html' , { root : baseDir } ))
 

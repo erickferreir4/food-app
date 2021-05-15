@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.scss'
 import { CartContext } from './../../context/CartContext'
+import img from './images/shopping-cart.png'
 
 const Minicart = () => {
 
@@ -59,7 +60,7 @@ const Minicart = () => {
                 <div 
                     onClick={() => setIscart(true)}
                     className="food-minicart--button--wrapper">
-                    <span className="food-minicart-qty"><img src="/images/shopping-cart.png" />
+                    <span className="food-minicart-qty"><img src={img} />
                         {cartItems.length}{cartItems.length > 1 ? ' items' : ' item'}
                     </span>  
                     <span className="food-minicart-value">${value.toFixed(2)}</span>

@@ -1,8 +1,8 @@
 import React from 'react';
 import './styles.scss';
+import Banner from './images/burger-promo.png'
 
 const Main = () => {
-
     return(
         <div className="food-main">
             <div className="food-main--wrapper">
@@ -14,7 +14,7 @@ const Main = () => {
                 </div>
 
                 <div className="food-main--right">
-                    <span><img src="/images/burger-promo.png" /></span> 
+                    <span><img src={Banner} /></span> 
                 </div>
             </div>
         </div>

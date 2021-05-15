@@ -1,6 +1,8 @@
 import React from 'react'
 import './styles.scss';
 import {Link} from 'react-router-dom'
+import motoIcon from './images/header-moto-icon.png'
+import logo from './images/logo-header.png'
 
 const menu = [
     'home',
@@ -16,7 +18,7 @@ const Header = () => {
             <div className="food-header--wrapper">
 
                 <span>
-                    <Link to='/'><img src="/images/logo-header.png" /></Link>
+                    <Link to='/'><img src={logo} /></Link>
                 </span>
 
                 <div className="food-header--menu">
@@ -24,7 +26,7 @@ const Header = () => {
                         {menu.map( item => <li key={item}><a href="#">{item}</a></li>)}
                     </ul>
                     <span className="food-header--moto">
-                        <img src="/images/header-moto-icon.png" />
+                        <img src={motoIcon} />
                     </span>
                 </div>
                 
