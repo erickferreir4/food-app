@@ -21,8 +21,11 @@ services:
             context: ./../src/api
             dockerfile: Dockerfile
 
+        working_dir: /app
+
         ports:
             - "8000:8000"
 
         volumes:
-            - ./../src/api:/var/www/html/app
+            - ./../src/api:/app
+            - /app/node_modules

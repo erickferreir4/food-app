@@ -3,14 +3,14 @@ FROM node:lts-alpine
 WORKDIR /app
 
 
+COPY ./package.json ./
 
-COPY . /app
+
+RUN npm install
+
+COPY . ./
+
 RUN npm install
 
 
-
-COPY . /app
-
-
 CMD ["npm", "start"]
-

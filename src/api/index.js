@@ -25,8 +25,6 @@ app.use(express.static('public'));
 //router
 app.use('/api', products)
 
-
-
 let porta = 8000
 app.listen(porta, () => {
     console.log('Servidor em execucao na porta ' + porta)
