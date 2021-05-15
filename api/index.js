@@ -6,7 +6,6 @@ const cookieParser = require('cookie-parser')
 require('dotenv/config');
 
 
-
 const products = require('./routes/ProductsRouter')
 const app = express();
 
@@ -24,6 +23,12 @@ app.use(express.static('public'));
 
 //router
 app.use('/api', products)
+
+
+const baseDir = `${__dirname}/../dist/`
+app.use(express.static(`${baseDir}`))
+app.get('/', (req, res) => res.sendfile('index.html' , { root : baseDir } ))
+
 
 let porta = 8000
 app.listen(porta, () => {
