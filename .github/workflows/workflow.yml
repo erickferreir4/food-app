@@ -20,7 +20,7 @@ jobs:
           cd /home/erickferreira/sites/food-app
           sudo git pull origin master
           sudo git status
-          npm install
-          npm run build
+          sudo npm install
+          sudo npm run build
           sudo chown -R 33:33 api
           sudo chown -R 33:33 dist
