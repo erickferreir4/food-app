@@ -22,7 +22,7 @@ export const HomeStorage = ({children}) => {
         setMenuLoading(true)
         setMosaicoLoading(true)
 
-        let response = await fetch(`/api/categories`)
+        let response = await fetch(`${process.env.API_URL}/mosaics/all`)
         let json = await response.json()
         setMenu(json)
         setMosaico(json)
@@ -31,7 +31,7 @@ export const HomeStorage = ({children}) => {
 
 
         setMenuItemLoading(true)
-        response = await fetch(`/api/products?category=${json[0]?.name}`)
+        response = await fetch(`${process.env.API_URL}/products/category/${json[0]?.name}`)
         json = await response.json()
         setMenuItem(json)
         setMenuActive(json[0]?.category)
@@ -42,11 +42,12 @@ export const HomeStorage = ({children}) => {
     React.useEffect( async () => {
 
         setShelfLoading(true)
-        let response = await fetch(`/api/products?category=special menu`)
+        let response = await fetch(`${process.env.API_URL}/products/category/pizza`)
         let json = await response.json()
         setShelf(json)
-        setShelfTitle('special menu')
+        setShelfTitle('pizza')
         setShelfLoading(false)
+
 
     }, [])
 
@@ -55,7 +56,7 @@ export const HomeStorage = ({children}) => {
     async function getItems(search) {
         setMenuActive(search)
         setMenuItemLoading(true)
-        let response = await fetch(`/api/products?category=${search}`)
+        let response = await fetch(`${process.env.API_URL}/products/category/${search}`)
         let json = await response.json()
         setMenuItem(json)
         setMenuItemLoading(false)

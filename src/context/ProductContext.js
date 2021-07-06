@@ -17,14 +17,14 @@ export const ProductStorage = ({children}) => {
 
         setProductLoading(true)
 
-        let response = await fetch(`/api/products?url=/product?${search}`)
+        let response = await fetch(`${process.env.API_URL}/products/name/${search}`)
         let json = await response.json()
-        setProduct(json[0])
+        setProduct(json)
 
-        response = await fetch(`/api/products?category=special%20menu`)
+        response = await fetch(`${process.env.API_URL}/products/category/${json.category}`)
         json = await response.json()
         setShelf(json)
-        setShelfTitle('special menu')
+        setShelfTitle(json[0].category)
 
 
         setProductLoading(false)

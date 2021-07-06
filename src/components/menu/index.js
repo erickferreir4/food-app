@@ -13,6 +13,7 @@ const Menu = () => {
         getItems(search)
     }
 
+
     if(menuLoading) return <Lazy />
 
     return(
@@ -24,8 +25,8 @@ const Menu = () => {
                 </span>
                 <nav className="food-menu--nav">
                     <ul>
-                        {menu.map( ({name, id}) => (
-                            <li className={name == menuActive ? 'is--active' : null} key={id}>
+                        {menu.map( ({name, _id}) => (
+                            <li key={_id} className={name == menuActive ? 'is--active' : null}>
                                 <a href="#" onClick={handleClick}>{name}</a>
                             </li>
                         ))}

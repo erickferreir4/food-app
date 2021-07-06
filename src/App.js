@@ -7,7 +7,6 @@ import Router from './Router';
 import Minicart from './components/minicart'
 import { CartStorage } from './context/CartContext'
 
-
 const App = () => {
     return ( 
         <>

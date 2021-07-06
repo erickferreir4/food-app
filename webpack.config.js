@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
+
 
 
 module.exports = {
@@ -37,7 +39,7 @@ module.exports = {
         historyApiFallback: true,
         proxy: {
             '/api': {
-                target: 'http://localhost:8000',
+                target: 'http://localhost:3000',
                 secure: false
             }
         },
@@ -51,6 +53,7 @@ module.exports = {
             minify: false,
             chunks: ['index']
         }),
+        new Dotenv()
     ],
     output: {
         path: path.resolve(__dirname, 'dist'),

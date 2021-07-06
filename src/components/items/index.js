@@ -14,8 +14,8 @@ const Items = () => {
         <div className="food-items">
             <div className="food-items--wrapper">
                 <ul className="food-items--items">
-                    {menuItem.map( ({name, id, price, category, img, url}) => (
-                        <li className="food-items--item" key={id}>
+                    {menuItem.map( ({name, _id, price, category, img, url}) => (
+                        <li className="food-items--item" key={_id}>
                             <Link to={url}>
                                 <span><img src={img} title={name}/></span>
                                 <span>
