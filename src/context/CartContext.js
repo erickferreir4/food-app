@@ -26,22 +26,22 @@ const CartStorage = ({children}) => {
 
     async function addItem(id) {
 
-        if( cartItems.filter(item => item.id === id ).length ) return
+        if( cartItems.filter(item => item._id === id ).length ) return
 
         setIncartLoad(true)
-        let response = await fetch(`/api/products?id=${id}`)
+        let response = await fetch(`/api/v1/products/id/${id}`)
         let json = await response.json()
         setIncartLoad(false)
 
-        if( cartItems.filter(item => item.id === json.id ).length ) return
+        if( cartItems.filter(item => item._id === json._id ).length ) return
 
-        const items = [...cartItems, json[0]]
+        const items = [...cartItems, json]
         setCartItems(items)
         localStorage.setItem('cartItems', JSON.stringify(items))
     }
 
     function removeItem(id) {
-        let items = cartItems.filter(item => item.id !== id)
+        let items = cartItems.filter(item => item._id !== id)
         setCartItems(items)
         localStorage.setItem('cartItems', JSON.stringify(items))
     }

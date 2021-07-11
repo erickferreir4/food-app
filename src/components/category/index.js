@@ -35,6 +35,3 @@ const Category = () => {
 
 export default Category
 
-
-//{"name":"special menu","description": "Sale off 50% only this week","link":"" ,"img":"http://via.placeholder.com/570x240"}
-//{"name":"pizza","description": "Sale off 50% only this week","link":"" ,"img":"http://via.placeholder.com/270x240"},

@@ -21,7 +21,7 @@ const Minicart = () => {
                         {cartItems.map( (item, index)=> (
                             <li key={index}>
                                 <button 
-                                    onClick={() => removeItem(item.id)}
+                                    onClick={() => removeItem(item._id)}
                                     className="food-minicart--remove">+</button>
                                 <span>
                                     <img src={item.img} />

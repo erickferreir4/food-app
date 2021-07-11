@@ -22,7 +22,8 @@ export const HomeStorage = ({children}) => {
         setMenuLoading(true)
         setMosaicoLoading(true)
 
-        let response = await fetch(`${process.env.API_URL}/mosaics/all`)
+        //let response = await fetch(`${process.env.API_URL}/mosaics/all`)
+        let response = await fetch(`${process.env.API_URL}/categories/all`)
         let json = await response.json()
         setMenu(json)
         setMosaico(json)
@@ -33,6 +34,7 @@ export const HomeStorage = ({children}) => {
         setMenuItemLoading(true)
         response = await fetch(`${process.env.API_URL}/products/category/${json[0]?.name}`)
         json = await response.json()
+        console.log(json)
         setMenuItem(json)
         setMenuActive(json[0]?.category)
         setMenuItemLoading(false)

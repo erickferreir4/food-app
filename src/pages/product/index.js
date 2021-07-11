@@ -13,7 +13,7 @@ const ProductPage = () => {
 
 
     function handleClick(ev) {
-        addItem(product.id)
+        addItem(product._id)
     }
 
     if(productLoading) return <Lazy />
@@ -38,7 +38,7 @@ const ProductPage = () => {
                             <h2>{product.name}</h2>
                             <p>Price: ${product.price}</p>
                             <button className={incartLoad ? 'food-product--load' : ''} onClick={handleClick}>
-                                {cartItems.filter( item => item.id === product.id).length ? 
+                                {cartItems.filter( item => item._id === product._id).length ? 
                                     'in Cart'
                                     : 'buy'}
                             </button>
