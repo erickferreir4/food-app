@@ -8,7 +8,7 @@ const Breadcrumb = ({category, item}) => {
             <ul className="food-breadcrumb--wrapper">
                 <li><Link to="/">Khadyo</Link></li>
                 <li className="food-breadcrumb--next">{'>'}</li>
-                <li><Link to={"/category?"+category}>{category}</Link></li>
+                <li><Link to={"/"+category}>{category}</Link></li>
                 {item ? (
                     <>
                         <li className="food-breadcrumb--next">{'>'}</li>

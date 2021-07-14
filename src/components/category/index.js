@@ -19,7 +19,7 @@ const Category = () => {
                     {mosaico.map( ({link, name, img, description, _id}) => (
                         <li className="food-category--item" key={_id}>
                             <Link to={link}>
-                                <img src={img} />
+                                <img src={process.env.PUBLIC_URL + img} />
                                 <span>
                                     <h3>{name}</h3>
                                     <p>{description}</p>

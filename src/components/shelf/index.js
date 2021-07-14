@@ -16,7 +16,7 @@ const Shelf = (props) => {
                     {props.items.map( ({name, id, category, img, price, url}, index) => (
                         <li key={index} className="food-shelf--item">
                             <Link to={url}>
-                                <span><img src={img} /></span>
+                                <span><img src={process.env.PUBLIC_URL + img} /></span>
                                 <h3>{name}</h3>
                                 <p>${price}</p>
                             </Link>

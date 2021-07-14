@@ -29,7 +29,7 @@ const CartStorage = ({children}) => {
         if( cartItems.filter(item => item._id === id ).length ) return
 
         setIncartLoad(true)
-        let response = await fetch(`/api/v1/products/id/${id}`)
+        let response = await fetch(`${process.env.API_URL}/products/id/${id}`)
         let json = await response.json()
         setIncartLoad(false)
 

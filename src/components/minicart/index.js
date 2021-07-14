@@ -24,7 +24,7 @@ const Minicart = () => {
                                     onClick={() => removeItem(item._id)}
                                     className="food-minicart--remove">+</button>
                                 <span>
-                                    <img src={item.img} />
+                                    <img src={process.env.PUBLIC_URL + item.img} />
                                 </span>
                                 <span>
                                     <p>{item.name}</p>

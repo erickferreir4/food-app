@@ -17,7 +17,7 @@ const Items = () => {
                     {menuItem.map( ({name, _id, price, category, img, url}) => (
                         <li className="food-items--item" key={_id}>
                             <Link to={url}>
-                                <span><img src={img} title={name}/></span>
+                                <span><img src={process.env.PUBLIC_URL + img} title={name}/></span>
                                 <span>
                                     <h3>{name}</h3>
                                     <p>${price}</p>

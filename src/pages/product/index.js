@@ -28,7 +28,7 @@ const ProductPage = () => {
                     <div className="food-product--box">
                         <div className="food-product--img">
                             <span>
-                                <img src={product.img} />
+                                <img src={process.env.PUBLIC_URL + product.img} />
                             </span>
                         </div>
                     </div>

@@ -11,7 +11,7 @@ export const ProductStorage = ({children}) => {
     const [shelfTitle, setShelfTitle] = React.useState(null)
     const [productLoading, setProductLoading] = React.useState(true)
 
-    const search = window.location.search.replace(/\?/g, '')
+    const search = window.location.hash.match(/\/.*\/p$/)[0].replace(/p$|\//g, '')
 
     React.useEffect(async () => {
 
