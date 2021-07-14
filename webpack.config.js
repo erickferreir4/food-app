@@ -4,7 +4,6 @@ const Dotenv = require('dotenv-webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env) => {
-    console.log(env)
 
     return {
         module: {

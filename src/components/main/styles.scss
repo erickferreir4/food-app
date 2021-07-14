@@ -7,29 +7,33 @@
         max-width: 1200px;
         margin: 0 auto;
         padding-top: 50px;
+
+        @media( max-width:768px ) {
+            padding: 30px 10px;
+        }
     }
 
     &--left, &--right {
-        max-width: 50%
+        max-width: 50%;
     }
 
     &--left {
         h3 {
             color: rgb(42, 67, 93);
             font-family: "Caveat", cursive;
-            font-size: 36px;
+            font-size: 25px;
             font-weight: 700;
         }
         h1 {
             color: #cc3333;
-            font-size: 60px;
+            font-size: 40px;
             font-weight: 900;
             text-transform: uppercase;
         }
         h2 {
             text-transform: capitalize;
             color: #2a435d;
-            font-size: 24px;
+            font-size: 14px;
             font-weight: 700;
             margin: 40px 0;
         }
@@ -41,6 +45,12 @@
             background: #cc3333;
             border-radius:7px;
             text-transform:uppercase;
+
+            @media( max-width: 768px ) {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+
             &:hover {
                 border: 1px solid #cc3333;
                 color: #cc3333;
